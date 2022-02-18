@@ -1,0 +1,22 @@
+<h2>User List</h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sr No</th>
+        <th>UserName</th>
+        <th>Last Seen Date</th>
+        <th>Message counts</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="userList && userList.length>0">
+      <tr *ngFor="let u of userList; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{u.userName}}</td>
+        <td>{{u.dateLastSeen}}</td>
+        <td>{{u.userCount}}</td>
+      </tr>
+    </tbody>
+    <tbody  *ngIf="!userList || userList.length<=0">
+        No Data Found
+    </tbody>
+</table>  
